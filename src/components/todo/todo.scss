@@ -1,0 +1,242 @@
+.todoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 30px;
+  padding: 30px;
+  margin: 150px 100px 150px 100px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    label {
+      display: flex;
+      gap: 10px;
+    }
+    .addButton {
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      background-color: #5930dd;
+      color: white;
+      margin-bottom: 10px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 19px 38px,
+        rgba(0, 0, 0, 0.22) 0px 15px 38px;
+      font-family: "Noto Serif", serif;
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 19px 38px,
+          rgba(13, 19, 218, 0.7) 0px 15px 38px;
+        background-color: #8269d4;
+        transition: 0.3s ease-in-out;
+      }
+    }
+  }
+}
+.input_box {
+  position: relative;
+  width: 300px;
+}
+.input_box input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid black;
+  background: white;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1em;
+  transition: 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 38px;
+}
+.input_box span {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1em;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+.input_box input:valid ~ span,
+.input_box input:focus ~ span {
+  color: #5930dd;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.65em;
+  padding: 0 10px;
+  background: white;
+  border-left: 1px solid #5930dd;
+  border-right: 1px solid #5930dd;
+  letter-spacing: 0.2em;
+}
+.input_box:nth-child(1) input:valid ~ span,
+.input_box:nth-child(1) input:focus ~ span {
+  background: #5930dd;
+  color: white;
+  border-radius: 2px;
+}
+.input_box:nth-child(2) input:valid ~ span,
+.input_box:nth-child(2) input:focus ~ span {
+  background: #5930dd;
+  color: white;
+  border-radius: 2px;
+}
+.input_box:nth-child(3) input:valid ~ span,
+.input_box:nth-child(3) input:focus ~ span {
+  background: #5930dd;
+  color: white;
+  border-radius: 2px;
+}
+.input_box:nth-child(4) input:valid ~ span,
+.input_box:nth-child(4) input:focus ~ span {
+  background: #5930dd;
+  color: white;
+  border-radius: 2px;
+}
+.input_box input:valid,
+.input_box input:focus {
+  border: 1px solid #5930dd;
+}
+
+.task {
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 500px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #5930dd;
+  /* From https://css.glass */
+  background: rgba(128, 21, 182, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1.6px);
+  -webkit-backdrop-filter: blur(1.6px);
+  border: 1px solid rgba(128, 21, 182, 1);
+  .text {
+    font-size: 20px;
+    font-weight: 800;
+  }
+  p {
+    margin: 0;
+    font-size: 20px;
+  }
+  .checkContain {
+    display: flex;
+    gap: 10px;
+    .red {
+      height: 20px;
+      width: 20px;
+      background-color: red;
+      border-radius: 50%;
+    }
+  }
+}
+.tasksContain {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+//-----------------------------------------------------------------------------------
+
+input[type="range"] {
+  height: 25px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #5930dd;
+  border-radius: 1px;
+  border: 0px solid #000000;
+}
+input[type="range"]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid #5930dd;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: #5930dd;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #5930dd;
+}
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #5930dd;
+  border-radius: 1px;
+  border: 0px solid #000000;
+}
+input[type="range"]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid #5930dd;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: #5930dd;
+  cursor: pointer;
+}
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type="range"]::-ms-fill-lower {
+  background: #5930dd;
+  border: 0px solid #000000;
+  border-radius: 2px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type="range"]::-ms-fill-upper {
+  background: #5930dd;
+  border: 0px solid #000000;
+  border-radius: 2px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type="range"]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid #5930dd;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: #5930dd;
+  cursor: pointer;
+}
+input[type="range"]:focus::-ms-fill-lower {
+  background: #5930dd;
+}
+input[type="range"]:focus::-ms-fill-upper {
+  background: #5930dd;
+}
