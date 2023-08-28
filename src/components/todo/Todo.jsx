@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import useForm from "../../hooks/form.jsx";
 import "./todo.scss";
-import {ThemeContext} from '../../context/completion/Completion.jsx'
+import { SettingsContext } from "../../context/settings/Settings";
 import { useContext } from "react";
 
 import { v4 as uuid } from "uuid";
 
 const ToDo = () => {
-  const state = useContext(ThemeContext);
-  console.log(state)
+  const state = useContext(SettingsContext);
 
   const [defaultValues] = useState({
     difficulty: 3,
@@ -106,10 +105,10 @@ const ToDo = () => {
               <small>Difficulty: {item.difficulty}</small>
             </p>
             <div
-              onClick={() => state.toggleComplete(item.id)}
+              onClick={() => toggleComplete(item.id)}
               className="checkContain"
             >
-              Complete: <div className={state.mode}></div>
+              Complete: <div className="red"></div>
               {item.complete.toString()}
             </div>
           </div>
