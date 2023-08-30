@@ -5,6 +5,7 @@ import { SettingsContext } from "../../context/settings/Settings";
 import { useContext } from "react";
 
 import { v4 as uuid } from "uuid";
+import PaginationSlider from "../list/PaginationSlider.jsx";
 
 const ToDo = () => {
   const state = useContext(SettingsContext);
@@ -19,6 +20,8 @@ const ToDo = () => {
   function addItem(item) {
     item.id = uuid();
     item.complete = false;
+    item.mode = "red";
+    item.hide = true;
     console.log(item);
     setList([...list, item]);
   }
@@ -32,6 +35,8 @@ const ToDo = () => {
     const items = list.map((item) => {
       if (item.id == id) {
         item.complete = !item.complete;
+        item.mode = item.mode === "red" ? "green" : "red";
+        item.hide = item.mode === "red" ? true : false;
       }
       return item;
     });
@@ -44,7 +49,6 @@ const ToDo = () => {
     setIncomplete(incompleteCount);
     document.title = `To Do List: ${incomplete}`;
   }, [list]);
-
   return (
     <div className="todoContainer">
       <header>
@@ -94,7 +98,7 @@ const ToDo = () => {
       </form>
       <div className="tasksContain">
         {list.map((item) => (
-          <div key={item.id} className="task">
+          <div key={item.id} className={item.hide ? "task" : "disappear"}>
             <p className="text">{item.text}</p>
             <p>
               <small>
@@ -104,15 +108,17 @@ const ToDo = () => {
             <p>
               <small>Difficulty: {item.difficulty}</small>
             </p>
-            <div
-              onClick={() => toggleComplete(item.id)}
-              className="checkContain"
-            >
-              Complete: <div className="red"></div>
-              {item.complete.toString()}
+            <div className="checkContain">
+              Complete:{" "}
+              <div
+                className={item.mode}
+                onClick={() => toggleComplete(item.id)}
+              ></div>
+              {item.complete ? "Completed" : "Pending"}
             </div>
           </div>
         ))}
+        {list.length != 0 && <PaginationSlider />}
       </div>
     </div>
   );
