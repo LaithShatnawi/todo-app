@@ -107,7 +107,63 @@
 .input_box input:focus {
   border: 1px solid #5930dd;
 }
-
+.disappear {
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 500px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #5930dd;
+  /* From https://css.glass */
+  background: rgba(128, 21, 182, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1.6px);
+  -webkit-backdrop-filter: blur(1.6px);
+  border: 1px solid rgba(128, 21, 182, 1);
+  opacity: 0;
+  transition: opacity 2s ease-out;
+  .text {
+    font-size: 20px;
+    font-weight: 800;
+  }
+  p {
+    margin: 0;
+    font-size: 20px;
+  }
+  .checkContain {
+    display: flex;
+    gap: 10px;
+    .red {
+      height: 20px;
+      width: 20px;
+      border: 1px solid white;
+      background-color: red;
+      border-radius: 50%;
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 19px 38px,
+          rgba(13, 19, 218, 0.5) 0px 15px 38px;
+        background-color: #8269d4;
+        transition: 0.3s ease-in-out;
+      }
+    }
+    .green {
+      height: 20px;
+      width: 20px;
+      border: 1px solid white;
+      background-color: green;
+      border-radius: 50%;
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 19px 38px,
+          rgba(13, 19, 218, 0.7) 0px 15px 38px;
+        background-color: #8269d4;
+        transition: 0.3s ease-in-out;
+      }
+    }
+  }
+}
 .task {
   border: 1px solid white;
   border-radius: 10px;
@@ -124,6 +180,7 @@
   backdrop-filter: blur(1.6px);
   -webkit-backdrop-filter: blur(1.6px);
   border: 1px solid rgba(128, 21, 182, 1);
+  transition: 1s ease-in-out;
   .text {
     font-size: 20px;
     font-weight: 800;
@@ -138,8 +195,28 @@
     .red {
       height: 20px;
       width: 20px;
+      border: 1px solid white;
       background-color: red;
       border-radius: 50%;
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 19px 38px,
+          rgba(13, 19, 218, 0.5) 0px 15px 38px;
+        background-color: #8269d4;
+        transition: 0.3s ease-in-out;
+      }
+    }
+    .green {
+      height: 20px;
+      width: 20px;
+      border: 1px solid white;
+      background-color: green;
+      border-radius: 50%;
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 19px 38px,
+          rgba(13, 19, 218, 0.7) 0px 15px 38px;
+        background-color: #8269d4;
+        transition: 0.3s ease-in-out;
+      }
     }
   }
 }
