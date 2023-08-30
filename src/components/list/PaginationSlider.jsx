@@ -1,4 +1,3 @@
-import React from "react";
 import { Pagination } from "@mantine/core";
 import { SettingsContext } from "../../context/settings/Settings";
 import { useContext } from "react";
@@ -12,7 +11,7 @@ const PaginationSlider = () => {
       className="pagination"
         value={state.page}
         onChange={state.setPage}
-        total={10}
+        total={state.items}
         color="violet"
       />
     </div>
