@@ -5,6 +5,8 @@ import ToDo from "./components/todo/Todo.jsx";
 import Header from "./components/header/Header.jsx";
 import Footer from "./components/footer/Footer.jsx";
 import Settings from "./context/settings/Settings";
+import { Route, Routes } from "react-router-dom";
+import Modification from "./components/Modification/Modification";
 
 export default class App extends React.Component {
   render() {
@@ -21,7 +23,10 @@ export default class App extends React.Component {
               <div className="shade"></div>
             </div>
             <Header />
-            <ToDo />
+            <Routes>
+              <Route path="/settings" element={<Modification />} />
+              <Route path="/" element={<ToDo />} />
+            </Routes>
             <Footer />
           </div>
         </Settings>
