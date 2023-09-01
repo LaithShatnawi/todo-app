@@ -41,20 +41,22 @@
       font-weight: 600;
     }
     .updatedText {
-      font-family:"Noto Serif", serif;;
+      font-family: "Noto Serif", serif;
       font-weight: 500;
     }
-    .card{
-        display: flex;
-        flex-direction: column;
-        gap: 50px;
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
     }
   }
 
   .mantine-q8nb9v {
     height: 100%;
   }
-
+  .mantine-1qt06jm {
+    cursor: pointer;
+  }
   .mantine-kegijc {
     color: white;
   }
@@ -62,16 +64,46 @@
     color: white;
     background-color: transparent;
   }
-  .settingsBtn {
-    width: 300px;
-    margin-top: 10px;
-    padding: 10px;
-    border: none;
-    color: white;
-    background-color: #6642dd;
-    transition: 0.4s ease;
-    &:hover {
-      background-color: #846ecf;
+  .btnsContain {
+    display: flex;
+    gap: 10px;
+    .resetBtn {
+      width: 300px;
+      margin-top: 10px;
+      padding: 10px;
+      border: none;
+      color: white;
+      background-color: #22133c;
+      transition: 0.4s ease;
+      cursor: pointer;
+      &:hover {
+        background-color: #342f46;
+      }
     }
+    .settingsBtn {
+      width: 300px;
+      margin-top: 10px;
+      padding: 10px;
+      border: none;
+      color: white;
+      background-color: #6642dd;
+      transition: 0.4s ease;
+      cursor: pointer;
+      &:hover {
+        background-color: #846ecf;
+      }
+    }
+  }
+}
+.alertContain{
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 1;
+  .mantine-166xwy4 {
+    position: relative;
+  }
+  .mantine-1p0jinc {
+    position: relative;
   }
 }

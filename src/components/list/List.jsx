@@ -6,14 +6,19 @@ import "../todo/todo.scss";
 const List = () => {
   const state = useContext(SettingsContext);
 
-  const startIndex = (state.page - 1) * 3;
-  const endIndex = startIndex + 3;
+  const startIndex = (state.page - 1) * state.numOfTasks;
+  const endIndex = startIndex + state.numOfTasks;
 
   return (
     <>
       {state.list
         .sort((a, b) => {
-          return b.difficulty - a.difficulty;
+          if(state.sortStandard === "difficulty"){
+            return b.difficulty - a.difficulty;
+          }
+          if(state.sortStandard === "completion"){
+            return b.complete - a.complete;
+          }
         })
         .filter((item, index) => index >= startIndex && index < endIndex)
         .map(
