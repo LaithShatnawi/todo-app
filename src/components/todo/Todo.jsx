@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { When } from "react-if";
 import useForm from "../../hooks/form.jsx";
 import "./todo.scss";
 import { SettingsContext } from "../../context/settings/Settings";
@@ -12,13 +13,14 @@ const ToDo = () => {
     state.addItem,
     state.defaultValues
   );
-
+  console.log(state.list);
   useEffect(() => {
     let incompleteCount = state.list.filter((item) => !item.complete).length;
     state.setIncomplete(incompleteCount);
     document.title = `To Do List: ${state.incomplete}`;
   }, [state]);
   return (
+    <When condition={state.loggedIn}>
     <div className="todoContainer">
       <header>
         <h1>To Do List: {state.incomplete} items pending</h1>
@@ -70,6 +72,7 @@ const ToDo = () => {
         </div>
       </div>
     </div>
+    </When>
   );
 };
 

@@ -14,8 +14,11 @@
     "@mantine/core": "^6.0.19",
     "@mantine/hooks": "^6.0.19",
     "@tabler/icons-react": "^2.32.0",
+    "jwt-decode": "^3.1.2",
     "react": "^18.2.0",
+    "react-cookies": "^0.1.1",
     "react-dom": "^18.2.0",
+    "react-if": "^4.1.5",
     "react-router-dom": "^6.15.0",
     "sass": "^1.66.1",
     "uuid": "^9.0.0"

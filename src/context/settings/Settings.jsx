@@ -7,8 +7,6 @@ const Settings = (props) => {
   const savedChecked =
     localStorage.getItem("checked") === "true" ? true : false;
   const savednumOfTasks = parseInt(localStorage.getItem("numOfTasks"));
-  console.log(savednumOfTasks);
-  console.log(savedChecked);
   const savedSortStandard = localStorage.getItem("sortStandard");
 
   const [list, setList] = useState([]);
