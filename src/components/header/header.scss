@@ -3,7 +3,6 @@
   justify-content: center;
   height: 200px;
   align-items: center;
-  background-color: #ffd369;
   color: #ededed;
   // border-radius: 30px;
   background: rgba(255, 255, 255, 0.3);
@@ -13,6 +12,12 @@
   // border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
+.containBTNs{
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  font-size: larger;}
 .tabContain {
   position: absolute;
   left: 0;
