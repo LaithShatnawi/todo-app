@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { LoginContext } from "../Auth/LoginContext";
 import "./header.scss";
+import Auth from "../Auth/Auth";
 
 const Header = () => {
   const state = useContext(LoginContext);
@@ -21,9 +22,11 @@ const Header = () => {
             <Link to="/">
               <button className="homeTab">Home</button>
             </Link>
-            <Link to="/settings">
-              <button className="settingsTab">Settings</button>
-            </Link>
+            <Auth capability="update">
+              <Link to="/settings">
+                <button className="settingsTab">Settings</button>
+              </Link>
+            </Auth>
           </div>
           <div className="containBTNs">
             <button onClick={state.logout} className="settingsTab">

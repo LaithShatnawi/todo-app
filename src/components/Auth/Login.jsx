@@ -21,22 +21,14 @@ const Login = () => {
         <div className="logContain">
           <form onSubmit={handleSubmit} className="loginForm">
             <label className="input_box">
-              <input
-                name="username"
-                required={true}
-                onChange={handleChange}
-              />
+              <input name="username" required={true} onChange={handleChange} />
               <span>Username</span>
             </label>
             <label className="input_box">
-              <input
-                name="password"
-                required={true}
-                onChange={handleChange}
-              />
+              <input name="password" required={true} onChange={handleChange} />
               <span>Password</span>
             </label>
-            <button className="loginBtn">Login</button>
+              <button className="loginBtn">Login</button>
           </form>
         </div>
       </When>
